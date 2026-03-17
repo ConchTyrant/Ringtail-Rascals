@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ringtail Rascals v2"
+config/name="Ringtail Rascals"
 run/main_scene="uid://ooq03uupdt2t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+config/tags=PackedStringArray("main")
 
 [input]
 
