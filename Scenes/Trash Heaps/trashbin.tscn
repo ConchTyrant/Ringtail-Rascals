@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bk2heismt31sa"]
+
+[ext_resource type="Texture2D" uid="uid://di8dodidlo5am" path="res://Assets/Sprites/Tilesets/Simple Tileset V3.png" id="1_o884f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o884f"]
+size = Vector2(8, 13.5)
+
+[node name="Trashbin" type="StaticBody2D" unique_id=1350919109]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=678971075]
+position = Vector2(0, -8)
+texture = ExtResource("1_o884f")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="Trash Heap Area" type="Area2D" parent="." unique_id=737349458]
+
+[node name="Detection Collision" type="CollisionShape2D" parent="Trash Heap Area" unique_id=332997591]
+visible = false
+position = Vector2(0, -7.75)
+shape = SubResource("RectangleShape2D_o884f")
+
+[node name="Wall Collision" type="CollisionPolygon2D" parent="." unique_id=547757391]
+visible = false
+position = Vector2(0, -8)
+polygon = PackedVector2Array(5, 8, -5, 8, -6, 4, -6, -2, -5, -2, -5, 4, -4, 7, 4, 7, 5, 4, 5, -2, 6, -2, 6, 4)
