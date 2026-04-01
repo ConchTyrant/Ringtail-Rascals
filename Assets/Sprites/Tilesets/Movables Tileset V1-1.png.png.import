@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diesj0vv0mirj"
-path="res://.godot/imported/V1.3 Mocha-SpriteSheet.png-5eec2029cc868d4afa511647697e658a.ctex"
+uid="uid://crqknlh4r4ygw"
+path="res://.godot/imported/Movables Tileset V1-1.png.png-c2b7b813984e3339100f4f3e22f0e4be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/V1.3 Mocha-SpriteSheet.png"
-dest_files=["res://.godot/imported/V1.3 Mocha-SpriteSheet.png-5eec2029cc868d4afa511647697e658a.ctex"]
+source_file="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png"
+dest_files=["res://.godot/imported/Movables Tileset V1-1.png.png-c2b7b813984e3339100f4f3e22f0e4be.ctex"]
 
 [params]
 
