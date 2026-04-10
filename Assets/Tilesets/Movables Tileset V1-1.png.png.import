@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crqknlh4r4ygw"
-path="res://.godot/imported/Movables Tileset V1-1.png.png-c2b7b813984e3339100f4f3e22f0e4be.ctex"
+uid="uid://bbhnmr3q4326y"
+path="res://.godot/imported/Movables Tileset V1-1.png.png-a408a132f6584ac655c6324eb4de4c10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png"
-dest_files=["res://.godot/imported/Movables Tileset V1-1.png.png-c2b7b813984e3339100f4f3e22f0e4be.ctex"]
+source_file="res://Assets/Tilesets/Movables Tileset V1-1.png.png"
+dest_files=["res://.godot/imported/Movables Tileset V1-1.png.png-a408a132f6584ac655c6324eb4de4c10.ctex"]
 
 [params]
 

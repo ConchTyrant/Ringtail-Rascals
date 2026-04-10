@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cu3bt3bl0pvpn"]
+
+[ext_resource type="Texture2D" uid="uid://bbhnmr3q4326y" path="res://Assets/Tilesets/Movables Tileset V1-1.png.png" id="1_83o2r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ui3r"]
+texture = ExtResource("1_83o2r")
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_jwoax"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5ui3r")
+
+[node name="Collision Tilemap" type="TileMapLayer" unique_id=75242511]
+tile_set = SubResource("TileSet_jwoax")
