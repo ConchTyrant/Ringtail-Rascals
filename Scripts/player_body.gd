@@ -66,7 +66,7 @@ func formAttributes():
 		#
 		speed = 8
 		jump_force = [3,1]
-		weight = 0.5
+		weight = 1
 	
 	# MOCHA
 	elif player_form == 'Mocha':
@@ -75,7 +75,7 @@ func formAttributes():
 		#
 		speed = 5
 		jump_force = [1,3]
-		weight = 1
+		weight = 3
 		
 	# COTTON
 	elif player_form =='Cotton':
@@ -84,7 +84,7 @@ func formAttributes():
 		#
 		speed = 3
 		jump_force = [2,2]
-		weight = 2
+		weight = 5
 	
 	# Sprite visibility
 	for i in PLAYER_SPRITES:
@@ -169,14 +169,15 @@ func jump():
 
 # -- GRAVITY --
 func gravity(delta):
+	var max_fall_speed = weight*50
 	if not is_on_floor():
 		# Fall
-		## Limits Pieface form's fall speed
-		if player_form == 'Pieface' and velocity.y > 100:
+		## If reaches max fall speed, limit fall.
+		if velocity.y >= max_fall_speed:
 			pass
 		## Regular gravity
 		else:
-			velocity.y += get_gravity().y * delta * weight
+			velocity.y += get_gravity().y * delta *  weight / 3
 		# If falling
 		if velocity.y > 0:
 			ANIMATE.play('fall')
