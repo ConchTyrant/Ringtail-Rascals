@@ -159,9 +159,10 @@ func jump():
 		velocity.y = jump_force[1]*-125
 	
 	# Jump move
-	var max_jump_move = jump_force[0]*50
 	if velocity.y < 0:
 		velocity.x = jump_force[0]*50 * direction
+	elif velocity.y > 0:
+		velocity.x = jump_force[0]*30 * direction
 
 
 # --- MISC ---
@@ -170,9 +171,12 @@ func jump():
 func gravity(delta):
 	if not is_on_floor():
 		# Fall
-		var max_fall_speed = weight*1000
-		if velocity.y <= max_fall_speed:
-			velocity.y += get_gravity().y * delta
+		## Limits Pieface form's fall speed
+		if player_form == 'Pieface' and velocity.y > 100:
+			pass
+		## Regular gravity
+		else:
+			velocity.y += get_gravity().y * delta * weight
 		# If falling
 		if velocity.y > 0:
 			ANIMATE.play('fall')
