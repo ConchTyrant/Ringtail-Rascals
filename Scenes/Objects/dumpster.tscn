@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://drh62ngkglu4q"]
+
+[ext_resource type="Texture2D" uid="uid://r8n5rad57pce" path="res://Assets/Tilesets/Dumpster v1.2B.png" id="1_mg2r5"]
+[ext_resource type="PackedScene" uid="uid://dw0hohfwbqoui" path="res://Scenes/Objects/trash_area.tscn" id="2_7ygca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg2r5"]
+size = Vector2(20, 8)
+
+[node name="Dumpster" type="RigidBody2D" unique_id=1423038216]
+collision_layer = 3
+lock_rotation = true
+
+[node name="Sprites" type="Node2D" parent="." unique_id=497056862]
+position = Vector2(-0.29999924, -39.3)
+
+[node name="Lid" type="Sprite2D" parent="Sprites" unique_id=1887367322]
+z_index = -5
+position = Vector2(-5, -16)
+texture = ExtResource("1_mg2r5")
+centered = false
+region_enabled = true
+region_rect = Rect2(11, 13, 30, 24)
+
+[node name="Trash Cove" type="Sprite2D" parent="Sprites" unique_id=361691125]
+z_index = 5
+position = Vector2(0, 3)
+texture = ExtResource("1_mg2r5")
+centered = false
+region_enabled = true
+region_rect = Rect2(96, 32, 23, 22)
+
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=945993848]
+z_index = 4
+texture = ExtResource("1_mg2r5")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 29, 49, 35)
+
+[node name="Wheels" type="Sprite2D" parent="Sprites" unique_id=740319098]
+z_index = -5
+position = Vector2(24, 37)
+texture = ExtResource("1_mg2r5")
+region_enabled = true
+region_rect = Rect2(17, 144, 46, 4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=754937428]
+visible = false
+position = Vector2(23.7, -0.29999924)
+polygon = PackedVector2Array(25, 0, -24, 0, -24, -36, -23, -36, -22.7, -23.7, -0.70000076, -23.7, -1, -36, 1, -39, 25, -39)
+
+[node name="Trash Area" parent="." unique_id=2098011173 instance=ExtResource("2_7ygca")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash Area" unique_id=682924789]
+position = Vector2(12, -29)
+shape = SubResource("RectangleShape2D_mg2r5")

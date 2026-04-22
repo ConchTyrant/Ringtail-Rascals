@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di8btiu0ivj2e"]
 
-[ext_resource type="Script" uid="uid://vry4qw6xkxea" path="res://Scripts/player_body.gd" id="1_5xga4"]
+[ext_resource type="Script" uid="uid://vry4qw6xkxea" path="res://Scripts/-- MAIN --/player_body.gd" id="1_5xga4"]
 [ext_resource type="Texture2D" uid="uid://dqub5i5fxvn43" path="res://Assets/Characters/V1.4 Mocha-SpriteSheet.png" id="1_aplnl"]
 [ext_resource type="Texture2D" uid="uid://k1y81vkxhwot" path="res://Assets/Characters/V1.4 PieFace-SpriteSheet.png" id="2_jv7n1"]
 [ext_resource type="Texture2D" uid="uid://dgoagr8byvsxy" path="res://Assets/Characters/V2.4 Cotton-PINK-SpriteSheet.png" id="3_5xga4"]
@@ -38,7 +38,7 @@ tracks/2/path = NodePath("Cotton Sprite:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0009999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"idle"]
@@ -441,7 +441,7 @@ region = Rect2(72, 48, 24, 24)
 atlas = ExtResource("3_5xga4")
 region = Rect2(96, 48, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xb5r"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma6y1"]
 atlas = ExtResource("3_5xga4")
 region = Rect2(96, 72, 24, 24)
 
@@ -507,11 +507,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0xb5r")
+"texture": SubResource("AtlasTexture_ma6y1")
 }],
 "loop": true,
 "name": &"fall",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -530,7 +530,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -590,7 +590,7 @@ region = Rect2(72, 72, 24, 24)
 atlas = ExtResource("1_aplnl")
 region = Rect2(96, 72, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tost5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_telg0"]
 atlas = ExtResource("1_aplnl")
 region = Rect2(24, 72, 24, 24)
 
@@ -613,10 +613,6 @@ region = Rect2(0, 72, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdlpb"]
 atlas = ExtResource("1_aplnl")
 region = Rect2(24, 72, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ma6y1"]
-atlas = ExtResource("1_aplnl")
-region = Rect2(48, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryhpn"]
 atlas = ExtResource("1_aplnl")
@@ -684,11 +680,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tost5")
+"texture": SubResource("AtlasTexture_telg0")
 }],
 "loop": true,
 "name": &"fall",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -710,9 +706,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xdlpb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ma6y1")
 }],
 "loop": true,
 "name": &"jump",
@@ -768,7 +761,7 @@ region = Rect2(60, 60, 20, 20)
 atlas = ExtResource("2_jv7n1")
 region = Rect2(0, 80, 20, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j65mq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_biyss"]
 atlas = ExtResource("2_jv7n1")
 region = Rect2(40, 60, 20, 20)
 
@@ -787,10 +780,6 @@ region = Rect2(0, 60, 20, 20)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ogh3"]
 atlas = ExtResource("2_jv7n1")
 region = Rect2(20, 60, 20, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_telg0"]
-atlas = ExtResource("2_jv7n1")
-region = Rect2(40, 60, 20, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05tno"]
 atlas = ExtResource("2_jv7n1")
@@ -852,11 +841,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j65mq")
+"texture": SubResource("AtlasTexture_biyss")
 }],
 "loop": true,
 "name": &"fall",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -875,9 +864,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ogh3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_telg0")
 }],
 "loop": true,
 "name": &"jump",
@@ -921,16 +907,29 @@ animations = [{
 radius = 5.0
 height = 12.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_de3nv"]
-radius = 4.0
-height = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xga4"]
+size = Vector2(14, 2)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1tw87"]
-radius = 3.0
-height = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3nv"]
+size = Vector2(14, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tw87"]
+size = Vector2(8, 6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_de3nv"]
+radius = 6.0000005
+height = 16.0
 
 [node name="Player Body" type="CharacterBody2D" unique_id=552994776]
+z_index = 3
 script = ExtResource("1_5xga4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=659680944]
+position = Vector2(0, -40)
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_enabled = true
 
 [node name="Body Sprites" type="Node2D" parent="." unique_id=1535803964]
 
@@ -940,7 +939,7 @@ libraries/ = SubResource("AnimationLibrary_1xrx6")
 [node name="Cotton Sprite" type="AnimatedSprite2D" parent="Body Sprites" unique_id=1331859714]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_0xb5r")
-animation = &"fall"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Mocha Sprite" type="AnimatedSprite2D" parent="Body Sprites" unique_id=1885420872]
@@ -959,23 +958,42 @@ autoplay = "idle"
 
 [node name="Body Collision" type="CollisionShape2D" parent="." unique_id=103570056]
 visible = false
-
-[node name="Cotton Collision" type="CollisionShape2D" parent="Body Collision" unique_id=367550714]
 position = Vector2(0, -5)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_5xga4")
-disabled = true
-
-[node name="Mocha Collision" type="CollisionShape2D" parent="Body Collision" unique_id=760282697]
-position = Vector2(0, -4)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_de3nv")
-disabled = true
-
-[node name="Pieface Collision" type="CollisionShape2D" parent="Body Collision" unique_id=1999549659]
-position = Vector2(0, -3)
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_1tw87")
-disabled = true
 
 [node name="Area Checks" type="Node2D" parent="." unique_id=1194827986]
+visible = false
+
+[node name="Crawl Checks" type="Node2D" parent="Area Checks" unique_id=1921691214]
+
+[node name="Crawl Upper-Check" type="Area2D" parent="Area Checks/Crawl Checks" unique_id=1783337239]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Checks/Crawl Checks/Crawl Upper-Check" unique_id=1547835849]
+position = Vector2(3, -7)
+shape = SubResource("RectangleShape2D_5xga4")
+
+[node name="Crawl Lower-Check" type="Area2D" parent="Area Checks/Crawl Checks" unique_id=457736403]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Checks/Crawl Checks/Crawl Lower-Check" unique_id=1866514534]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_de3nv")
+
+[node name="Climb Check" type="Area2D" parent="Area Checks" unique_id=830035311]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Checks/Climb Check" unique_id=882086229]
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_1tw87")
+
+[node name="Grab Range" type="Area2D" parent="Area Checks" unique_id=820993593]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area Checks/Grab Range" unique_id=200465736]
+position = Vector2(8, -6)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_de3nv")

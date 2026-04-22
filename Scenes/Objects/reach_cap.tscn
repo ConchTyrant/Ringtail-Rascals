@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://p27iq6b0qvxv"]
+
+[ext_resource type="Script" uid="uid://bpjsdehpvidmj" path="res://Scripts/Objects/reach_cap.gd" id="1_qp6q2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scgyh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp6q2"]
+size = Vector2(32, 32)
+
+[node name="Reach Cap" type="StaticBody2D" unique_id=1046560757]
+script = ExtResource("1_qp6q2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=227951853]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_scgyh")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1649696847]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=466997108]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_qp6q2")

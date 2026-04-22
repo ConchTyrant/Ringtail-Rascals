@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://cgyijtuoj71uy"]
+
+[ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_kbw0k"]
+[ext_resource type="Texture2D" uid="uid://b1x8pdg1uufvy" path="res://Assets/Texture Grounds/RedRoom V2.png" id="2_kbw0k"]
+[ext_resource type="PackedScene" uid="uid://qayf2yxaapa5" path="res://Scenes/Objects/door.tscn" id="3_5n80b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbw0k"]
+size = Vector2(256, 128)
+
+[node name="Redroom" type="Node2D" unique_id=1812197507 groups=["Room Group"]]
+
+[node name="Room Area" type="Area2D" parent="." unique_id=1369529246]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area" unique_id=1643721816]
+position = Vector2(128, 64)
+shape = SubResource("RectangleShape2D_kbw0k")
+
+[node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_kbw0k")]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAAAAAAPAAIAAAAAAAAAAAAPAAMAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAANAAMAAAADAAEAACAOAAMAAAADAAEAACAIAAIAAAADAAEAACAHAAIAAAADAAEAACAGAAIAAAADAAEAACAFAAIAAAADAAEAACAIAAQAAAADAAEAACA=")
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=712434853]
+
+[node name="Background" type="TextureRect" parent="Texture Grounds" unique_id=1722440633]
+z_index = -10
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_kbw0k")
+
+[node name="Door to Room" parent="." unique_id=1890197926 instance=ExtResource("3_5n80b")]
+position = Vector2(0, 112)
+metadata/is_facing_left = true

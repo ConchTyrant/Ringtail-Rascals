@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://xy8unp5axpt2"]
+
+[ext_resource type="Texture2D" uid="uid://b72p10mxkg4cl" path="res://Assets/Texture Grounds/Green Room v2.2.png" id="1_v5r8o"]
+
+[node name="Greenroom Ceiling" type="Sprite2D" unique_id=1531458767]
+texture = ExtResource("1_v5r8o")
+region_enabled = true
+region_rect = Rect2(16, 0, 368, 16)

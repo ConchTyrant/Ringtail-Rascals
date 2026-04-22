@@ -1,0 +1,41 @@
+[gd_scene format=4 uid="uid://ddpcap2ekoapy"]
+
+[ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_xbyf6"]
+[ext_resource type="PackedScene" uid="uid://drh62ngkglu4q" path="res://Scenes/Objects/dumpster.tscn" id="2_juae2"]
+[ext_resource type="PackedScene" uid="uid://be1srvyy42ckw" path="res://Scenes/Objects/ladder.tscn" id="3_humt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbyf6"]
+size = Vector2(304, 256)
+
+[node name="Alley Room" type="Node2D" unique_id=671426161 groups=["Room Group"]]
+
+[node name="Room Area" type="Area2D" parent="." unique_id=1818897377]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area" unique_id=162096954]
+position = Vector2(152, -128)
+shape = SubResource("RectangleShape2D_xbyf6")
+
+[node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_xbyf6")]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAADAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAAEAPn/AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAAAPb/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPT/AAAAAAAAAAAAAPP/AAAAAAAAAAD///P/AAAAAAAAAAD+//P/AAAAAAAAAAD9//P/AAAAAAAAAAD8//P/AAAAAAAAAAD7//P/AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAASAP7/AAAAAAAAAAASAP3/AAAAAAAAAAASAPz/AAAAAAAAAAASAPn/AAAAAAAAAAASAPj/AAAAAAAAAAASAPf/AAAAAAAAAAASAPT/AAAAAAAAAAASAPP/AAAAAAAAAAASAPL/AAAAAAAAAAALAPb/AAAAAAEAAAALAPf/AAAAAAEAAAALAPj/AAAAAAEAAAALAPn/AAAAAAEAAAALAPr/AAAAAAEAAAALAPv/AAAAAAEAAAALAPz/AAAAAAEAAAALAP3/AAAAAAEAAAALAP7/AAAAAAEAAAAKAPj/AAADAAEAAAAJAPj/AAADAAEAAAAJAPf/AAADAAEAAAAIAPf/AAADAAEAAAAHAPf/AAADAAEAAAAHAPb/AAADAAEAAAAGAPb/AAADAAEAAAAFAPb/AAADAAEAAAAEAPb/AAADAAEAAAADAPb/AAADAAEAAAADAPX/AAADAAEAAAACAPX/AAADAAEAAAACAPT/AAADAAEAAAABAPT/AAADAAEAAAAMAPj/AAADAAEAAAANAPj/AAADAAEAAAANAPn/AAADAAEAAAAOAPn/AAADAAEAAAAPAPn/AAADAAEAAAAPAPj/AAADAAEAAAAQAPj/AAADAAEAAAAQAPf/AAADAAEAAAARAPf/AAADAAEAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAYAPn/AAAAAAAAAAAXAPn/AAAAAAAAAAAWAPn/AAAAAAAAAAAVAPn/AAAAAAAAAAAUAPn/AAAAAAAAAAATAPn/AAAAAAAAAAASAPX/AAACAAAAACATAPb/AAAAAAAAAAATAPX/AAAAAAAAAAATAPf/AAAAAAAAAAATAPT/AAAAAAAAAAASAPv/AAACAAAAAGASAPr/AAACAAAAAGA=")
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=1527668896]
+
+[node name="Dumpster" parent="." unique_id=1423038216 instance=ExtResource("2_juae2")]
+position = Vector2(240, -16)
+collision_mask = 5
+freeze = true
+
+[node name="Ladder" type="Node2D" parent="." unique_id=1074458100]
+position = Vector2(272, -144)
+
+[node name="Ladder" parent="Ladder" unique_id=2076361498 instance=ExtResource("3_humt6")]
+
+[node name="Ladder2" parent="Ladder" unique_id=899416172 instance=ExtResource("3_humt6")]
+position = Vector2(0, 16)
+
+[node name="Ladder3" parent="Ladder" unique_id=1601543042 instance=ExtResource("3_humt6")]
+position = Vector2(0, 32)
+
+[node name="Ladder4" parent="Ladder" unique_id=922451251 instance=ExtResource("3_humt6")]
+position = Vector2(0, 48)

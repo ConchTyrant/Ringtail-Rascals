@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dw0hohfwbqoui"]
+
+[ext_resource type="Script" uid="uid://cfac887m4iloo" path="res://Scripts/Objects/trash_heap.gd" id="1_yoggs"]
+
+[node name="Trash Area" type="Area2D" unique_id=2098011173]
+collision_layer = 0
+script = ExtResource("1_yoggs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
