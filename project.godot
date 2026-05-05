@@ -13,7 +13,6 @@ config_version=5
 config/name="Ringtail Rascals v4"
 run/main_scene="uid://dal75rq3thlwe"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [global_group]
 
@@ -55,7 +54,7 @@ INTERACT={
 [layer_names]
 
 2d_physics/layer_1="BASE"
-2d_physics/layer_2="TILE DETECT"
+2d_physics/layer_2="CLIMB"
 2d_physics/layer_3="STEADY"
 
 [physics]

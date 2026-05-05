@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c66ffrcsawgf1" path="res://Scenes/Levels/Apartments/greenroom.tscn" id="1_1s8ao"]
 [ext_resource type="PackedScene" uid="uid://cgyijtuoj71uy" path="res://Scenes/Levels/Apartments/redroom.tscn" id="2_433i4"]
 [ext_resource type="PackedScene" uid="uid://bfsdf8vti3imd" path="res://Scenes/Levels/Apartments/nook_room.tscn" id="4_hn071"]
-[ext_resource type="PackedScene" uid="uid://di02cp1jcrwtk" path="res://Scenes/Levels/Apartments/fan_room.tscn" id="5_hn071"]
+[ext_resource type="PackedScene" uid="uid://di02cp1jcrwtk" path="res://Scenes/Levels/Apartments/bedroom.tscn" id="5_hn071"]
 [ext_resource type="PackedScene" uid="uid://cx8binb5okogj" path="res://Scenes/Levels/Apartments/kitchen_room.tscn" id="5_sur2p"]
 [ext_resource type="PackedScene" uid="uid://ddpcap2ekoapy" path="res://Scenes/Levels/Apartments/alley_room.tscn" id="6_sur2p"]
+[ext_resource type="PackedScene" uid="uid://bm6mqpf7jp2ou" path="res://Scenes/Levels/Apartments/roof_room.tscn" id="7_ve0u7"]
 
 [node name="Apartment Level" type="Node2D" unique_id=341631712]
 
@@ -15,7 +16,7 @@ position = Vector2(-32, 0)
 [node name="Kitchen Room" parent="." unique_id=1347215027 instance=ExtResource("5_sur2p")]
 position = Vector2(-208, 96)
 
-[node name="Fan Room" parent="." unique_id=1799677800 instance=ExtResource("5_hn071")]
+[node name="Bedroom" parent="." unique_id=1799677800 instance=ExtResource("5_hn071")]
 position = Vector2(272, 16)
 
 [node name="Redroom" parent="." unique_id=1812197507 instance=ExtResource("2_433i4")]
@@ -26,3 +27,6 @@ position = Vector2(448, 96)
 
 [node name="Nook Room" parent="." unique_id=378606051 instance=ExtResource("4_hn071")]
 position = Vector2(368, 112)
+
+[node name="Roof Room" parent="." unique_id=1290790528 instance=ExtResource("7_ve0u7")]
+position = Vector2(-48, -96)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jt18o26fa1vy"]
+
+[ext_resource type="PackedScene" uid="uid://be1srvyy42ckw" path="res://Scenes/Objects/ladder.tscn" id="1_mksjj"]
+[ext_resource type="Script" uid="uid://dscquwnecgly1" path="res://Scripts/Objects/extendable_ladder.gd" id="1_s2uri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3ovc"]
+size = Vector2(16, 16)
+
+[node name="Extendable Ladder" type="StaticBody2D" unique_id=2008544332]
+script = ExtResource("1_s2uri")
+metadata/length = 0
+
+[node name="Ladder" parent="." unique_id=2076361498 instance=ExtResource("1_mksjj")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=710802020]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=343404461]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_y3ovc")

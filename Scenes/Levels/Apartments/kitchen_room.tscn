@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cx8binb5okogj"]
 
 [ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_w6c7d"]
-[ext_resource type="Texture2D" uid="uid://bh5mtwfybrs54" path="res://Assets/Texture Grounds/Kitchen V2.1.png" id="2_cert3"]
+[ext_resource type="Texture2D" uid="uid://dxw2wh67txlr" path="res://Assets/Texture Grounds/Kitchen V2.3.png" id="2_cert3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6c7d"]
 size = Vector2(240, 112)

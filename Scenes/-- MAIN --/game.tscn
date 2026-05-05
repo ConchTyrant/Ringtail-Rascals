@@ -10,4 +10,4 @@ script = ExtResource("1_kt108")
 [node name="Apartment Level" parent="." unique_id=341631712 instance=ExtResource("1_54s35")]
 
 [node name="Player Body" parent="." unique_id=552994776 instance=ExtResource("2_rumbs")]
-position = Vector2(576, 80)
+position = Vector2(571, 81)

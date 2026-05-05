@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d3n1ivvuh80c8"]
+
+[ext_resource type="Texture2D" uid="uid://cqa6s8jqfgily" path="res://Assets/Tilesets/Stackable Boxes V1.png" id="1_p481n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p481n"]
+size = Vector2(8, 8)
+
+[node name="Box Small" type="RigidBody2D" unique_id=1047531772]
+collision_layer = 3
+lock_rotation = true
+metadata/weight = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803151683]
+texture = ExtResource("1_p481n")
+region_enabled = true
+region_rect = Rect2(4, 8, 9, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159656926]
+visible = false
+shape = SubResource("RectangleShape2D_p481n")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dj6k0iguwyv6j"]
+
+[ext_resource type="Texture2D" uid="uid://bbhnmr3q4326y" path="res://Assets/Tilesets/Movables Tileset V1-1.png.png" id="1_g4vuy"]
+[ext_resource type="PackedScene" uid="uid://dw0hohfwbqoui" path="res://Scenes/Misc/trash_area.tscn" id="2_b4hho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4vuy"]
+size = Vector2(4, 4)
+
+[node name="Trash Can" type="RigidBody2D" unique_id=236829967]
+collision_layer = 7
+collision_mask = 5
+lock_rotation = true
+metadata/weight = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221802759]
+z_index = 5
+position = Vector2(0, -12)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_g4vuy")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1121875922]
+visible = false
+scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(4, 0, -4, 0, -6, -10, -5, -10, -4, -5.3333335, 4, -5.3333335, 5, -10, 6, -10, 5.044342, -5.221718)
+
+[node name="Trash Area" parent="." unique_id=2098011173 instance=ExtResource("2_b4hho")]
+visible = false
+position = Vector2(4, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trash Area" unique_id=2026809925]
+position = Vector2(-4, -12)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_g4vuy")

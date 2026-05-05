@@ -1,56 +1,150 @@
 [gd_scene format=3 uid="uid://drh62ngkglu4q"]
 
-[ext_resource type="Texture2D" uid="uid://r8n5rad57pce" path="res://Assets/Tilesets/Dumpster v1.2B.png" id="1_mg2r5"]
-[ext_resource type="PackedScene" uid="uid://dw0hohfwbqoui" path="res://Scenes/Objects/trash_area.tscn" id="2_7ygca"]
+[ext_resource type="Texture2D" uid="uid://bbecbhid3c42w" path="res://Assets/Tilesets/Dumpster V2.png" id="1_b7fyy"]
+[ext_resource type="PackedScene" uid="uid://dw0hohfwbqoui" path="res://Scenes/Misc/trash_area.tscn" id="2_7ygca"]
+[ext_resource type="PackedScene" uid="uid://be1srvyy42ckw" path="res://Scenes/Objects/ladder.tscn" id="3_b7fyy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7fyy"]
+atlas = ExtResource("1_b7fyy")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uouk"]
+atlas = ExtResource("1_b7fyy")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rtoy"]
+atlas = ExtResource("1_b7fyy")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgue4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7fyy")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uouk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rtoy")
+}],
+"loop": true,
+"name": &"move",
+"speed": 4.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hhly"]
+atlas = ExtResource("1_b7fyy")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hybg3"]
+atlas = ExtResource("1_b7fyy")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbs16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hhly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hybg3")
+}],
+"loop": true,
+"name": &"splash",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg2r5"]
-size = Vector2(20, 8)
+size = Vector2(19, 8)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b7fyy"]
+a = Vector2(-12, 0)
+b = Vector2(12, 0)
 
 [node name="Dumpster" type="RigidBody2D" unique_id=1423038216]
 collision_layer = 3
 lock_rotation = true
+metadata/weight = 4.0
 
-[node name="Sprites" type="Node2D" parent="." unique_id=497056862]
-position = Vector2(-0.29999924, -39.3)
+[node name="Sprites" type="Node2D" parent="." unique_id=678587715]
 
-[node name="Lid" type="Sprite2D" parent="Sprites" unique_id=1887367322]
-z_index = -5
-position = Vector2(-5, -16)
-texture = ExtResource("1_mg2r5")
+[node name="Lid" type="Sprite2D" parent="Sprites" unique_id=1340174967]
+z_index = -10
+position = Vector2(-3, -19)
+texture = ExtResource("1_b7fyy")
 centered = false
 region_enabled = true
-region_rect = Rect2(11, 13, 30, 24)
+region_rect = Rect2(91, 93, 54, 24)
 
-[node name="Trash Cove" type="Sprite2D" parent="Sprites" unique_id=361691125]
-z_index = 5
-position = Vector2(0, 3)
-texture = ExtResource("1_mg2r5")
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=2073692620]
+z_index = 10
+texture = ExtResource("1_b7fyy")
 centered = false
 region_enabled = true
-region_rect = Rect2(96, 32, 23, 22)
+region_rect = Rect2(14, 32, 53, 32)
 
-[node name="Body" type="Sprite2D" parent="Sprites" unique_id=945993848]
-z_index = 4
-texture = ExtResource("1_mg2r5")
-centered = false
-region_enabled = true
-region_rect = Rect2(176, 29, 49, 35)
+[node name="Wheels" type="AnimatedSprite2D" parent="Sprites" unique_id=1338712277]
+z_index = 10
+position = Vector2(27, 8)
+sprite_frames = SubResource("SpriteFrames_jgue4")
+animation = &"idle"
+autoplay = "idle"
 
-[node name="Wheels" type="Sprite2D" parent="Sprites" unique_id=740319098]
-z_index = -5
-position = Vector2(24, 37)
-texture = ExtResource("1_mg2r5")
-region_enabled = true
-region_rect = Rect2(17, 144, 46, 4)
+[node name="Trash Splash" type="AnimatedSprite2D" parent="Sprites" unique_id=218589683]
+z_index = 10
+position = Vector2(27, 8)
+sprite_frames = SubResource("SpriteFrames_lbs16")
+animation = &"empty"
+frame_progress = 0.5212219
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=754937428]
 visible = false
-position = Vector2(23.7, -0.29999924)
-polygon = PackedVector2Array(25, 0, -24, 0, -24, -36, -23, -36, -22.7, -23.7, -0.70000076, -23.7, -1, -36, 1, -39, 25, -39)
+position = Vector2(25, 36)
+polygon = PackedVector2Array(26, 0, -23, 0, -23, -36, -22, -36, -22, -25, -1, -25, -1, -36, 2, -39, 23, -39, 26, -36)
 
 [node name="Trash Area" parent="." unique_id=2098011173 instance=ExtResource("2_7ygca")]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trash Area" unique_id=682924789]
-position = Vector2(12, -29)
+position = Vector2(13.5, 6)
 shape = SubResource("RectangleShape2D_mg2r5")
+
+[node name="Ladder" type="Node2D" parent="." unique_id=1304002648]
+visible = false
+position = Vector2(-24, 84)
+
+[node name="Ladder" parent="Ladder" unique_id=2076361498 instance=ExtResource("3_b7fyy")]
+position = Vector2(23, -84)
+
+[node name="Ladder2" parent="Ladder" unique_id=1587334167 instance=ExtResource("3_b7fyy")]
+position = Vector2(23, -68)
+
+[node name="Ladder3" parent="Ladder" unique_id=1792060104 instance=ExtResource("3_b7fyy")]
+position = Vector2(62, -84)
+
+[node name="Ladder4" parent="Ladder" unique_id=1310761307 instance=ExtResource("3_b7fyy")]
+position = Vector2(62, -68)
+
+[node name="Lid Collision" type="StaticBody2D" parent="." unique_id=1439890984]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lid Collision" unique_id=240438222]
+visible = false
+position = Vector2(14, -18)
+shape = SubResource("SegmentShape2D_b7fyy")
+one_way_collision = true

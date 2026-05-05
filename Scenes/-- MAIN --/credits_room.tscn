@@ -1,0 +1,42 @@
+[gd_scene format=4 uid="uid://br5nt5rytwh3b"]
+
+[ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_86jsv"]
+[ext_resource type="Texture2D" uid="uid://d2debd4v7hsve" path="res://Assets/-- MISC --/Credits-People.png" id="2_kxbt2"]
+[ext_resource type="Texture2D" uid="uid://calvr3n7remdb" path="res://Assets/-- MISC --/Credits-Tools.png" id="3_uqndd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86jsv"]
+size = Vector2(256, 400)
+
+[node name="Credits Room" type="Node2D" unique_id=935901380 groups=["Room Group"]]
+
+[node name="Room Area" type="Area2D" parent="." unique_id=1835352081]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area" unique_id=1959923462]
+position = Vector2(112, -184)
+shape = SubResource("RectangleShape2D_86jsv")
+
+[node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_86jsv")]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAD///b/AAAAAAAAAAD///f/AAAAAAAAAAD///T/AAAAAAAAAAD///P/AAAAAAAAAAAAAPP/AAAAAAAAAAABAPP/AAAAAAAAAAACAPP/AAAAAAAAAAADAPP/AAAAAAAAAAAEAPP/AAAAAAAAAAAFAPP/AAAAAAAAAAAGAPP/AAAAAAAAAAAHAPP/AAAAAAAAAAAIAPP/AAAAAAAAAAAJAPP/AAAAAAAAAAAKAPP/AAAAAAAAAAALAPP/AAAAAAAAAAAMAPP/AAAAAAAAAAD///X/AAAAAAAAAAD///L/AAAAAAAAAAD///H/AAAAAAAAAAD///D/AAAAAAAAAAD//+//AAAAAAAAAAD//+7/AAAAAAAAAAD//+3/AAAAAAAAAAD//+z/AAAAAAAAAAD//+v/AAAAAAAAAAD//+r/AAAAAAAAAAD//+n/AAAAAAAAAAD//+j/AAAAAAAAAAAAAOj/AAAAAAAAAAABAOj/AAAAAAAAAAACAOj/AAAAAAAAAAADAOj/AAAAAAAAAAAEAOj/AAAAAAAAAAAFAOj/AAAAAAAAAAAGAOj/AAAAAAAAAAAHAOj/AAAAAAAAAAAIAOj/AAAAAAAAAAAJAOj/AAAAAAAAAAAKAOj/AAAAAAAAAAALAOj/AAAAAAAAAAAMAOj/AAAAAAAAAAAOAAAAAAAAAAAAAAAOAP//AAAAAAIAAAAOAP7/AAAAAAIAAAAOAP3/AAAAAAIAAAAOAPz/AAAAAAIAAAAOAPv/AAAAAAIAAAAOAPr/AAAAAAIAAAAOAPn/AAAAAAIAAAAOAPj/AAAAAAIAAAAOAPf/AAAAAAIAAAAOAPb/AAAAAAIAAAAOAPX/AAAAAAIAAAAOAPT/AAAAAAIAAAAOAPP/AAAAAAIAAAAOAPL/AAAAAAIAAAAOAPH/AAAAAAIAAAAOAPD/AAAAAAIAAAAOAO//AAAAAAIAAAAOAO7/AAAAAAIAAAAOAO3/AAAAAAIAAAAOAOz/AAAAAAIAAAAOAOv/AAAAAAIAAAAOAOr/AAAAAAIAAAAOAOn/AAAAAAIAAAANAOj/AAAAAAAAAAAOAOj/AAAAAAAAAAA=")
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=1742502845]
+z_index = -10
+scale = Vector2(1.1138561, 1.0363133)
+
+[node name="People" type="TextureRect" parent="Texture Grounds" unique_id=136994650]
+offset_top = -347.38528
+offset_right = 201.10318
+offset_bottom = -199.59023
+texture = ExtResource("2_kxbt2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Tools" type="TextureRect" parent="Texture Grounds" unique_id=344424717]
+offset_top = -185.27216
+offset_right = 201.10318
+texture = ExtResource("3_uqndd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TP Point" type="Node2D" parent="." unique_id=16986568]
+position = Vector2(96, -272)

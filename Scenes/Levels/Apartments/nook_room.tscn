@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bfsdf8vti3imd"]
 
 [ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_xbyf6"]
-[ext_resource type="PackedScene" uid="uid://qayf2yxaapa5" path="res://Scenes/Objects/door.tscn" id="2_h60q4"]
+[ext_resource type="Texture2D" uid="uid://3v0reetaqpal" path="res://Assets/Texture Grounds/Nook V1.2.png" id="2_h60q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nerps"]
 size = Vector2(176, 112)
@@ -16,10 +16,14 @@ position = Vector2(72, -56)
 shape = SubResource("RectangleShape2D_nerps")
 
 [node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_xbyf6")]
-tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAEAPn/AAAAAAAAAAAFAPn/AAAAAAAAAAAGAPn/AAAAAAAAAAAHAPn/AAAAAAAAAAADAPn/AAAAAAAAAAACAPn/AAAAAAAAAAABAPn/AAAAAAAAAAAAAPn/AAAAAAAAAAD/////AAAAAAAAAAD///n/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAJAPj/AAAAAAAAAAA=")
+visible = false
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAEAPn/AAAAAAAAAAAFAPn/AAAAAAAAAAAGAPn/AAAAAAAAAAAHAPn/AAAAAAAAAAADAPn/AAAAAAAAAAACAPn/AAAAAAAAAAABAPn/AAAAAAAAAAAAAPn/AAAAAAAAAAD/////AAAAAAAAAAD///n/AAAAAAAAAAD///r/AAAAAAAAAAD///v/AAAAAAAAAAAIAPn/AAAAAAAAAAAJAPn/AAAAAAAAAAAJAPj/AAAAAAAAAAADAP7/AAAFAAAAABA=")
 
 [node name="Texture Grounds" type="Node2D" parent="." unique_id=65286618]
 
-[node name="Door" parent="." unique_id=1890197926 instance=ExtResource("2_h60q4")]
-position = Vector2(0, -16)
-metadata/door_type = 1
+[node name="Background" type="TextureRect" parent="Texture Grounds" unique_id=1222983192]
+z_index = -10
+offset_left = -16.0
+offset_top = -112.0
+offset_right = 160.0
+texture = ExtResource("2_h60q4")

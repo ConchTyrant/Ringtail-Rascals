@@ -42,9 +42,9 @@ func detect():
 		else:
 			swap_queue.erase(i)
 	# Call functions
-	var current = swap_queue[0]
-	camera(current)
-	var ROOM = current.get_parent()
+	var AREA = swap_queue[0]
+	camera(AREA)
+	var ROOM = AREA.get_parent()
 	roomOverlay(ROOM)
 
 func camera(area):
@@ -81,8 +81,9 @@ func camera(area):
 	CAMERA.zoom = Vector2(zoom_aspect,zoom_aspect)
 
 func roomOverlay(room): 
-	for i : Node2D in ROOM_BANK:
-		if i == room:
-			i.visible = true
+	for texture : Node2D in TEXTURE_GROUNDS_BANK:
+		if texture.get_parent() == room:
+			texture.visible = true
 		else:
-			i.visible = false
+			texture.visible = false
+	

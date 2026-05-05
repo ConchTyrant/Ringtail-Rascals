@@ -1,13 +1,18 @@
 [gd_scene format=4 uid="uid://c66ffrcsawgf1"]
 
 [ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_p1vnc"]
-[ext_resource type="Texture2D" uid="uid://b72p10mxkg4cl" path="res://Assets/Texture Grounds/Green Room v2.2.png" id="1_snxx6"]
 [ext_resource type="Texture2D" uid="uid://tkfm5tw8s4eh" path="res://Assets/Texture Grounds/Green Room HandRail.png" id="2_p1vnc"]
-[ext_resource type="PackedScene" uid="uid://xy8unp5axpt2" path="res://Scenes/Misc/greenroom_ceiling.tscn" id="3_uad38"]
+[ext_resource type="Texture2D" uid="uid://1ownjaf00kjw" path="res://Assets/Texture Grounds/Green Room v2.3.png" id="2_xepon"]
 [ext_resource type="PackedScene" uid="uid://qayf2yxaapa5" path="res://Scenes/Objects/door.tscn" id="5_xepon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1vnc"]
 size = Vector2(400, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xepon"]
+size = Vector2(56, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v628"]
+size = Vector2(16, 21)
 
 [node name="Greenroom" type="Node2D" unique_id=2063024199 groups=["Room Group"]]
 
@@ -20,7 +25,7 @@ shape = SubResource("RectangleShape2D_p1vnc")
 
 [node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_p1vnc")]
 visible = false
-tile_map_data = PackedByteArray("AAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAYAAAAAAAAAAAAXAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAATAAAAAAAAAAAAAAASAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAXAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAATAAYAAAAAAAAAAAASAAYAAAAAAAAAAAARAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAUAAQAAAACAAEAACAVAAQAAAACAAEAACAWAAQAAAACAAEAACAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAKAAAAAAAEAAEAAAALAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAANAAMAAAAEAAEAAAAOAAQAAAAEAAEAAAAPAAUAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAAAAAAYAAYAAAAAAAAAAAAXAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAATAAAAAAAAAAAAAAASAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAXAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAUAAYAAAAAAAAAAAATAAYAAAAAAAAAAAASAAYAAAAAAAAAAAARAAYAAAAAAAAAAAAQAAYAAAAAAAAAAAAPAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAANAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAALAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAADAAYAAAAAAAAAAAACAAYAAAAAAAAAAAABAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAUAAQAAAACAAEAACAVAAQAAAACAAEAACAWAAQAAAACAAEAACAPAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAKAAAAAAAFAAEAAAALAAEAAAAFAAEAAAAMAAIAAAAFAAEAAAANAAMAAAAFAAEAAAAOAAQAAAAFAAEAAAAPAAUAAAAFAAEAAAA=")
 
 [node name="Texture Grounds" type="Node2D" parent="." unique_id=554611180]
 
@@ -28,11 +33,14 @@ tile_map_data = PackedByteArray("AAAYAAAAAAAAAAAAAAAYAAEAAAAAAAAAAAAYAAIAAAAAAAA
 z_index = -10
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_snxx6")
+texture = ExtResource("2_xepon")
 
-[node name="Greenroom Ceiling" parent="Texture Grounds" unique_id=1531458767 instance=ExtResource("3_uad38")]
+[node name="Ceiling" type="Sprite2D" parent="Texture Grounds" unique_id=448497064]
 z_index = 10
 position = Vector2(200, 8)
+texture = ExtResource("2_xepon")
+region_enabled = true
+region_rect = Rect2(0, 0, 400, 16)
 
 [node name="Handrail" type="TextureRect" parent="Texture Grounds" unique_id=567696093]
 z_index = 1
@@ -44,3 +52,29 @@ metadata/_edit_use_anchors_ = true
 [node name="Door Front" parent="." unique_id=1890197926 instance=ExtResource("5_xepon")]
 position = Vector2(400, 96)
 metadata/door_type = 1
+
+[node name="Couch Collision" type="StaticBody2D" parent="." unique_id=1789842834]
+visible = false
+position = Vector2(100, 80)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Seats" type="CollisionShape2D" parent="Couch Collision" unique_id=1363063358]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_xepon")
+one_way_collision = true
+
+[node name="Arm Left" type="CollisionShape2D" parent="Couch Collision" unique_id=1933670675]
+position = Vector2(-40, -13.5)
+shape = SubResource("RectangleShape2D_5v628")
+one_way_collision = true
+
+[node name="Arm Right" type="CollisionShape2D" parent="Couch Collision" unique_id=1934178280]
+position = Vector2(40, -13.5)
+shape = SubResource("RectangleShape2D_5v628")
+one_way_collision = true
+
+[node name="Top" type="CollisionShape2D" parent="Couch Collision" unique_id=2019762237]
+position = Vector2(0, -30.5)
+shape = SubResource("RectangleShape2D_xepon")
+one_way_collision = true

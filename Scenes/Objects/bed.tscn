@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://6k0jq47j7x54"]
+
+[ext_resource type="Texture2D" uid="uid://0iyl0q7jkav2" path="res://Assets/Texture Grounds/Bed V1.png" id="1_0wxpm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4gba"]
+size = Vector2(80, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wxpm"]
+size = Vector2(80, 16)
+
+[node name="Bed" type="StaticBody2D" unique_id=1833524500]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1751154706]
+
+[node name="Body" type="Sprite2D" parent="Sprite" unique_id=381961912]
+texture = ExtResource("1_0wxpm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 48)
+
+[node name="Legs" type="Sprite2D" parent="Sprite" unique_id=911332314]
+z_index = 10
+position = Vector2(0, 48)
+texture = ExtResource("1_0wxpm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 48, 96, 16)
+
+[node name="Body Collision" type="CollisionShape2D" parent="." unique_id=747180873]
+visible = false
+position = Vector2(46, 34.5)
+shape = SubResource("RectangleShape2D_v4gba")
+
+[node name="Under Collision" type="CollisionShape2D" parent="." unique_id=236663062]
+visible = false
+position = Vector2(46, 56)
+shape = SubResource("RectangleShape2D_0wxpm")
+one_way_collision = true

@@ -1,0 +1,63 @@
+[gd_scene format=4 uid="uid://di02cp1jcrwtk"]
+
+[ext_resource type="PackedScene" uid="uid://cu3bt3bl0pvpn" path="res://Scenes/-- MAIN --/collision_tilemap.tscn" id="1_5jt1g"]
+[ext_resource type="PackedScene" uid="uid://p27iq6b0qvxv" path="res://Scenes/Objects/reach_cap.tscn" id="2_f7gq8"]
+[ext_resource type="Texture2D" uid="uid://bwlsc6884gl6w" path="res://Assets/Texture Grounds/Bedroom.png" id="2_t70ru"]
+[ext_resource type="PackedScene" uid="uid://ba0epbsq4sam6" path="res://Scenes/Objects/fan.tscn" id="4_j7r8k"]
+[ext_resource type="PackedScene" uid="uid://b3lr0lri1g4d8" path="res://Scenes/Objects/plushie.tscn" id="5_f7gq8"]
+[ext_resource type="PackedScene" uid="uid://6k0jq47j7x54" path="res://Scenes/Objects/bed.tscn" id="7_j7r8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utiui"]
+size = Vector2(320, 128)
+
+[node name="Bedroom" type="Node2D" unique_id=1799677800 groups=["Room Group"]]
+position = Vector2(48, 0)
+
+[node name="Room Area" type="Area2D" parent="." unique_id=1233249213]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room Area" unique_id=33695097]
+position = Vector2(-208, -64)
+shape = SubResource("RectangleShape2D_utiui")
+
+[node name="Collision Tilemap" parent="." unique_id=75242511 instance=ExtResource("1_5jt1g")]
+visible = false
+tile_map_data = PackedByteArray("AAD8//j/AAAAAAAAAAD7//j/AAAAAAAAAAD6//j/AAAAAAAAAAD5//j/AAAAAAAAAAD4//j/AAAAAAAAAAD3//j/AAAAAAAAAAD0////AAAAAAAAAADz////AAAAAAAAAADy////AAAAAAAAAADy//j/AAAAAAAAAADx//j/AAAAAAAAAAD1////AAAAAAAAAADw////AAAAAAAAAADw//j/AAAAAAAAAAD2////AAAAAAAAAAD8////AAAAAAAAAAD7////AAAAAAAAAAD8//n/AAAAAAAAAAD8//r/AAAAAAAAAAD8//v/AAAAAAAAAADv////AAAAAAAAAADu////AAAAAAAAAADt////AAAAAAAAAADs////AAAAAAAAAAD3////AAAFAAEAAADv//j/AAAAAAAAAAD2//j/AAAAAAAAAAD1//j/AAAAAAAAAADz//j/AAAAAAAAAAD0//j/AAAAAAAAAADr////AAAAAAAAAADq////AAAAAAAAAADp////AAAAAAAAAADp//7/AAAAAAAAAADp//3/AAAAAAAAAADp//z/AAAAAAAAAADp//v/AAAAAAAAAADp//r/AAAAAAAAAADp//n/AAAAAAAAAADp//j/AAAAAAAAAADu//j/AAAAAAAAAADt//j/AAAAAAAAAADs//j/AAAAAAAAAADx////AAAAAAAAAADs//n/AAAAAAAAAAA=")
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=1463339289]
+
+[node name="Background" type="TextureRect" parent="Texture Grounds" unique_id=1645633499]
+z_index = -10
+offset_left = -368.0
+offset_top = -128.0
+offset_right = -48.0
+texture = ExtResource("2_t70ru")
+
+[node name="Stair Cap" type="Node2D" parent="." unique_id=1819731263]
+
+[node name="Reach Cap" parent="Stair Cap" unique_id=1046560757 instance=ExtResource("2_f7gq8")]
+position = Vector2(-144, -16)
+
+[node name="Reach Cap2" parent="Stair Cap" unique_id=1849715075 instance=ExtResource("2_f7gq8")]
+position = Vector2(-128, -16)
+
+[node name="Reach Cap3" parent="Stair Cap" unique_id=545573920 instance=ExtResource("2_f7gq8")]
+position = Vector2(-112, -16)
+
+[node name="Reach Cap4" parent="Stair Cap" unique_id=798258255 instance=ExtResource("2_f7gq8")]
+position = Vector2(-96, -16)
+
+[node name="Bed" parent="." unique_id=1833524500 instance=ExtResource("7_j7r8k")]
+position = Vector2(-264, -80)
+
+[node name="Plushie" parent="." unique_id=1440081364 instance=ExtResource("5_f7gq8")]
+position = Vector2(-196, -56)
+collision_layer = 3
+metadata/weight = 4.0
+
+[node name="Fan1" parent="." unique_id=1189948119 instance=ExtResource("4_j7r8k")]
+position = Vector2(-344, -24)
+rotation = -1.5707964
+
+[node name="Fan2" parent="." unique_id=2009003197 instance=ExtResource("4_j7r8k")]
+position = Vector2(-280, -24)

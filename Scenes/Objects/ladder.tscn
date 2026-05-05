@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://be1srvyy42ckw"]
 
-[ext_resource type="Script" uid="uid://j2wiue4ykdvj" path="res://Scripts/Objects/ladder.gd" id="2_2g1wp"]
 [ext_resource type="Texture2D" uid="uid://d2e68qrcleqtk" path="res://Assets/Tilesets/Ladders TileSet V1.png" id="2_6713q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g1wp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6713q"]
 size = Vector2(16, 16)
 
 [node name="Ladder" type="StaticBody2D" unique_id=2076361498]
 z_index = -10
-script = ExtResource("2_2g1wp")
+collision_layer = 2
+collision_mask = 0
+metadata/ladder = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1482554456]
 position = Vector2(8, 8)
@@ -16,9 +17,7 @@ texture = ExtResource("2_6713q")
 region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1891483428]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1134347672]
 visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2062189365]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_2g1wp")
+shape = SubResource("RectangleShape2D_6713q")

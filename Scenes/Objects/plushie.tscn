@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b3lr0lri1g4d8"]
+
+[ext_resource type="Texture2D" uid="uid://bqhcu2payfsmg" path="res://Assets/Texture Grounds/Peanut Butter Plush.png" id="1_ifexs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo5up"]
+size = Vector2(28, 46)
+
+[node name="Plushie" type="RigidBody2D" unique_id=1440081364]
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697699472]
+position = Vector2(0, -24)
+texture = ExtResource("1_ifexs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=514276994]
+visible = false
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_qo5up")

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ba0epbsq4sam6"]
+
+[ext_resource type="Texture2D" uid="uid://dicvphwj3vfd" path="res://Assets/Tilesets/Fan TileSet V1.png" id="1_i34ox"]
+[ext_resource type="PackedScene" uid="uid://bfjthddraa45d" path="res://Scenes/Misc/wind.tscn" id="2_ktej0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktej0"]
+atlas = ExtResource("1_i34ox")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr37e"]
+atlas = ExtResource("1_i34ox")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqc1i"]
+atlas = ExtResource("1_i34ox")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbbk6"]
+atlas = ExtResource("1_i34ox")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w11nc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktej0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr37e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqc1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbbk6")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i34ox"]
+size = Vector2(16, 16)
+
+[node name="Fan" type="StaticBody2D" unique_id=2009003197]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1853253261]
+sprite_frames = SubResource("SpriteFrames_w11nc")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.35360166
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597628076]
+visible = false
+shape = SubResource("RectangleShape2D_i34ox")
+
+[node name="Wind" parent="." unique_id=978695336 instance=ExtResource("2_ktej0")]
+position = Vector2(16, 0)
